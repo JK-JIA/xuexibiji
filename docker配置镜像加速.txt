@@ -1,0 +1,23 @@
+docker 下载镜像提示到达了下载限制数，或者下载不下来
+
+设置国内镜像加速
+
+```yaml
+root@master01:~# cat /etc/docker/daemon.json
+{
+  "registry-mirrors": [
+    "https://do.nark.eu.org",
+    "https://dc.j8.work",
+    "https://docker.m.daocloud.io",
+    "https://dockerproxy.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://docker.nju.edu.cn"
+  ],
+  "insecure-registries": ["192.168.3.101:30010"]
+}
+```
+
+```shell
+systemctl restart docker
+```
+
